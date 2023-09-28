@@ -1,0 +1,45 @@
+.auth-container {
+    background-color: #f2f2f2; /* Alterei a cor de fundo para um tom mais claro de cinza */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinhar o conteúdo no centro vertical e horizontalmente e adicionar um layout de coluna */
+    padding: 20px; /* Adicionar espaço interno */
+}
+
+/* Estilos para o conteúdo dentro de .auth-container */
+.auth-content {
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    border-radius: 8px; /* Borda arredondada para o conteúdo */
+    padding: 20px; /* Espaçamento interno para o conteúdo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    text-align: center; /* Alinhar o texto ao centro */
+}
+
+/* Estilizar um botão dentro do .auth-container */
+.auth-button {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Remover a borda do botão */
+    border-radius: 4px; /* Borda arredondada para o botão */
+    cursor: pointer; /* Mostrar um cursor de mão ao passar o mouse sobre o botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    transition: background-color 0.2s ease; /* Transição suave para a cor de fundo ao passar o mouse */
+}
+
+.auth-button:hover {
+    background-color: #0056b3; /* Cor de fundo alterada ao passar o mouse sobre o botão */
+}
+
+/* Estilizar um link dentro do .auth-container */
+.auth-link {
+    color: #007bff; /* Cor do link */
+    text-decoration: none; /* Remover sublinhado padrão do link */
+    font-weight: bold; /* Adicionar negrito ao link */
+}
+
+.auth-link:hover {
+    text-decoration: underline; /* Sublinhar o link ao passar o mouse sobre ele */
+}

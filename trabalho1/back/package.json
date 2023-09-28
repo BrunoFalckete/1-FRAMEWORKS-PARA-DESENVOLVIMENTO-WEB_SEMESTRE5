@@ -1,0 +1,29 @@
+{
+  "name": "trabalho",
+  "version": "1.0.0",
+  "description": "Trabalho Bruno",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./bin/www"
+  },
+  "author": "BrunoFalckete",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.3.0",
+    "axios": "^1.5.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "prisma": "^5.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "keywords": []
+}

@@ -1,0 +1,44 @@
+.container {
+  max-width: 1200px;
+  min-height: 100vh;
+
+  background: #eee;
+
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.post {
+  background: #fff;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: transform 150ms ease-in-out;
+}
+
+.post:hover {
+  transform: scale(1.07);
+}
+
+.post img {
+  max-width: 100%;
+}
+
+#txtSearch {
+  width: 98.5%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #999;
+  font-weight: 500;
+}

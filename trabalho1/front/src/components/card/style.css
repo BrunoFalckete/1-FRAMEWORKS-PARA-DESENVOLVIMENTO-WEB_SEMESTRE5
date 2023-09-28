@@ -1,0 +1,12 @@
+.card-container {
+    padding: 2em;
+    margin: auto 2em;
+    background-color: white;
+    border-radius: 10px; /* Convertido para em */
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); /* Usando padrão RGBA */
+    min-width: 350px;
+    display: flex; /* Centralizar verticalmente */
+    align-items: center; /* Centralizar verticalmente */
+    transition: box-shadow 0.3s; /* Adicionando transição suave */
+    font-family: 'Arial', sans-serif; /* Fonte personalizada (substitua pela sua escolha) */
+}

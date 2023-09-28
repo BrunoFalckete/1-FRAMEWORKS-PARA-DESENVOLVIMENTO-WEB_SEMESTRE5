@@ -1,0 +1,2 @@
+1- construir em card(componente) e grid
+2- criar um botao para adicionar um stock

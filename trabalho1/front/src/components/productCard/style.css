@@ -1,0 +1,33 @@
+/* Estilos gerais para cartões de produtos */
+.product-card {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para a imagem do produto */
+.product-card .thumbnail {
+    width: 100%;
+}
+
+/* Estilos para a categoria */
+.product-card .category {
+    background-color: rgb(57, 158, 53);
+    padding: 5px;
+    font-size: 12px;
+    color: #fff; /* Adicionado para garantir a legibilidade do texto */
+}
+
+/* Estilos para a marca */
+.product-card .mark {
+    background-color: rgb(187, 82, 82);
+    padding: 5px;
+    font-size: 11px;
+    color: #fff; /* Adicionado para garantir a legibilidade do texto */
+}
+
+/* Espaçamento entre seções no cartão de produto */
+.product-card section {
+    margin-bottom: 1rem;
+}

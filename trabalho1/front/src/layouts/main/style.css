@@ -1,0 +1,28 @@
+/* Defina variáveis para cores comuns */
+:root {
+    --background-color: #eee;
+    --header-background-color: #ffffff;
+    --box-shadow-color: black;
+    --main-padding: 2rem 4rem;
+}
+
+/* Estilize o container principal */
+.main-container {
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+/* Estilize o cabeçalho */
+.main-container header {
+    background-color: var(--header-background-color);
+    padding: 2rem;
+    box-shadow: 3px 0px 3px var(--box-shadow-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilize o conteúdo principal */
+.main-container main {
+    margin-top: 1rem;
+    padding: var(--main-padding);
+}

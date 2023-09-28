@@ -1,0 +1,37 @@
+// Importa o módulo 'app' de um arquivo chamado '../app'
+const app = require('../app');
+
+// Importa o módulo 'http' que é nativo do Node.js
+const http = require('http');
+
+// Importa o módulo 'body-parser' que é usado para fazer o parsing do corpo das requisições HTTP
+const bodyParser = require('body-parser');
+
+// Define a porta que a aplicação irá usar, usando a variável de ambiente 'PORT' ou, caso não exista, a porta 3001
+const port = process.env.PORT || '5000';
+
+// Define a porta da aplicação dentro do objeto 'app'
+app.set('port', port);
+
+// Usa o 'body-parser' para fazer o parsing do corpo das requisições no formato JSON
+app.use(bodyParser.json());
+
+// Cria um servidor HTTP usando o módulo 'http' e passa a aplicação 'app' como argumento
+const server = http.createServer(app);
+
+// Função que será chamada quando o servidor estiver ouvindo por conexões
+function onListening() {
+  const addr = server.address();
+  const bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  
+  // Loga uma mensagem indicando que o sistema subiu e em qual porta está rodando
+  console.log('Sistema subiu! Porta: ' + bind);
+}
+
+// Faz o servidor escutar na porta especificada
+server.listen(port);
+
+// Adiciona um evento que será chamado quando o servidor estiver ouvindo por conexões
+server.on('listening', onListening);
