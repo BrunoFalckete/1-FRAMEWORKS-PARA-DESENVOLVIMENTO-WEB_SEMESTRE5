@@ -1,0 +1,36 @@
+ANOTACOES:
+
+"docker" para ver se esta instalado
+para instalar: https://www.docker.com/get-started/
+
+"docker run" : para baixar e executar uma imagem
+
+"docker run hello-world": comando para teste da docker
+
+"docker ps": saber se um container esta rodando
+
+"docker run it ubuntu bash": baixa ubuntu direto no terminal
+
+"docker image ls": lista todos imagens disponiveis no computador
+
+"ctrl+d": finaliza o processo
+
+"docker stop "id fo container: os tres primeiros caracteres do container id"": serve para parar o container
+
+"docker run nginx": servidor web
+
+//porta do container diferente do pc
+
+"docker run -p 8080:80 nginx": esta liberando a porta do computador para link com o container
+
+"docker exec -it "id fo container: os tres primeiros caracteres do container id" bash": executa o terminal do container rodando
+
+"docker run -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx": mapear a pasta local com a pasta do container
+
+"docker rmi  "id fo container: os tres primeiros caracteres do container id"": apaga a imagem
+
+"docker build -t "nome do usuario no docker hub"/nome da imagem que vai ser buildada" .": builda a imagem para criar uma do nosso jeito 
+
+"docker push "nome do usuario no docker hub"/nome da imagem que vai ser buildada"": faz upload da imagem modificada
+
+"docker compose up": subir o container que esta no arquivo .yaml
