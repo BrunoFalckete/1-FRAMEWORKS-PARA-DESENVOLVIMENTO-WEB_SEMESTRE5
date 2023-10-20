@@ -1,8 +1,19 @@
 version: '3'
 services:
-  nginx:
-    image: nginx:latest
+  app:
+    nginx:
+      image: nginx:latest
+      ports:
+        - "8080:80"
+      volumes:
+        - ./html:/usr/shared/nginx/html
+  banco-de-dados:
+    image: mysql:latest
     ports:
-      - "8080:80"
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: bruno
     volumes:
-      - ./html:/usr/shared/nginx/html
+      - ./mysql:/var/lib/mysql
