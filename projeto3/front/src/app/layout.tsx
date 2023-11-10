@@ -1,6 +1,7 @@
 import ThemeProvider from '@/provider/ThemeProvider';
 import './globals.css';
 import type { Metadata } from 'next';
+import LayoutProvider from '@/provider/LayoutProvider';
 
 export const metadata: Metadata = {
   title: 'Framework Shop',
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LayoutProvider>{children}</LayoutProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

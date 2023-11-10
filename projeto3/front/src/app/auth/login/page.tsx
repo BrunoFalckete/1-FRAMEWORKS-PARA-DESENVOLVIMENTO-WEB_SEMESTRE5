@@ -13,21 +13,26 @@ interface UserType {
   password: string;
 }
 
-function Register() {
+function Login() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const onRegister = async (values: UserType) => {
-
+  const onLogin = async (values: UserType) => {
     try{
       setLoading(true);
-      await axios.post('http://localhost:3000/registe', values).then((res) => {
-        setLoading(false);
-        message.success('Login success, plese login to continue');
-        router.push('/auth/login')
-        console.log(res);
-      });
+      const res =  await axios.post('http://localhost:3000/login', values);
+        if(res.data.statuCode === 200){
+          message.error(res.data.message)
+          return;
+        }
+
+        //Administrar o token
+        message.success(res.data.message);
+        router.push('/')
+
     } catch (error: any) {
       message.error(error.response.data.message);
+      setLoading(false);
+    } finally {
       setLoading(false);
     }
   };
@@ -46,17 +51,11 @@ function Register() {
           <Form
             className="w-[500px] flex flex-col gap-5"
             layout="vertical"
-            onFinish={onRegister}
+            onFinish={ onLogin }
           >
-            <h1 className="text-2xl font-bold">Register</h1>
+            <h1 className="text-2xl font-bold">Login</h1>
             <hr />
-            <Form.Item
-              name="name"
-              label="Name"
-              rules={getAntdFieldsRequireRule('Please input your name')}
-            >
-              <input type="text" />
-            </Form.Item>
+
             <Form.Item
               name="email"
               label="Email"
@@ -73,11 +72,11 @@ function Register() {
             </Form.Item>
 
             <Button type="primary" htmlType="submit" block loading={loading}>
-              Register
+              Login
             </Button>
 
-            <Link href="/auth/registe" className="text-primary">
-              Alredy have an account? Login
+            <Link href="/auth/login" className="text-primary">
+              Dont have an account ? Register
             </Link>
           </Form>
         </div>
@@ -86,6 +85,6 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
 
 
