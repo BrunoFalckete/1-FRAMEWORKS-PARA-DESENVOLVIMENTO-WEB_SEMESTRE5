@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  height: 40px !important;
+  border-radius: 0 !important;
+}
+
+input {
+  width: 100% !important;
+  height: 45px !important;
+  padding: 0 10px !important;
+  border: 1px solid #a9a9a9 !important;
+  border-radius: 5px !important;
+}
+
+.ant-form-item-label {
+  padding-bottom: 0 !important;
+}
+
+.ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+textarea {
+  width: 100% !important;
+  min-height: 100px !important;
+  padding: 10px !important;
+  border: 1px solid #a9a9a9 !important;
+  border-radius: 5px !important;
+}
+
+table {
+  border: 1px solid #a9a9a9 !important;
+}

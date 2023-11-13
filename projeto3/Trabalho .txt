@@ -1,3 +1,0 @@
-- Criar um container no docker pro banco de dados (docker compose)
-- Criar um backend para receber os dados do cadastro via POST (Prisma)
-

@@ -1,15 +1,16 @@
-version: '3'
+version: '3.8'
 services:
-  mysql:
-    image: mysql:8
-    container_name: mysql-back
+  db:
+    image: mysql:latest
+    container_name: mysql-ecommerce
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ecommerce
-      MYSQL_USER: beto
+      MYSQL_PASSWORD: root
     ports:
-      - 3306:3306
+      - "3306:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
-  
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
