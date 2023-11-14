@@ -19,6 +19,16 @@ model User {
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
 }
+model File{
+  id        String   @id @default(uuid())
+  fileName      String
+  contentLength Int
+  contentType String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+  
+}
 
 model Category {
   id        Int      @id @default(autoincrement())
