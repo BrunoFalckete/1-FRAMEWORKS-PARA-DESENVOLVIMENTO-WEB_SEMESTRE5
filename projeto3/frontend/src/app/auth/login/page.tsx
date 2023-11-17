@@ -48,6 +48,7 @@ function Login() {
             onFinish={onLogin}
             className="w-[400px] flex flex-col gap-5"
             layout="vertical"
+            initialValues={{name: "", email: "", password: ""}}
           >
             <h1 className="text-2xl font-bold">Login</h1>
             <hr />

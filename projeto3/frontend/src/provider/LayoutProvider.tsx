@@ -67,7 +67,7 @@ function LayoutProvider({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       )}
-      <div className="p-5">{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

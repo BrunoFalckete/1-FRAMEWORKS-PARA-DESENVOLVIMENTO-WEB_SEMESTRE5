@@ -11,16 +11,27 @@ function CategoryForm({
   showCategoryForm,
   setShowCategoryForm,
   reloadData,
+  category,
+  setSelectedCategory,
 }: CategoryFormProps) {
 
   const [form] = Form.useForm()
 
   const onFinish = async(values: CategoryFormData) => {
     try {
-      const res = await axios.post("http://localhost:3000/category", values)
-      message.success("Category added successfully")
+
+      if(category) {
+        await axios.patch(`http://localhost:3000/category/${category.id}`, values)
+        message.success("Category updated successfully")
+
+      } else {
+        const res = await axios.post("http://localhost:3000/category", values)
+        message.success("Category added successfully")
+      }
+
       reloadData();
-      setShowCategoryForm(false)
+      setShowCategoryForm(false);
+      setSelectedCategory(null);
     } catch (error: any) {
       message.error(error.message)
     }
@@ -28,10 +39,12 @@ function CategoryForm({
 
   return (
     <Modal
-      title={<h1 className="text-2xl font-bold text-gray-800">Add Category</h1>}
+      title={<h1 className="text-2xl font-bold text-gray-800">
+        {category ? 'Edit Category': 'Add Category'}</h1>}
       open={showCategoryForm}
       onCancel={() => {
         setShowCategoryForm(false);
+        setSelectedCategory(null);
       }}
       centered
       closable={false}
@@ -40,7 +53,13 @@ function CategoryForm({
         form.submit();
       }}
     >
-      <Form layout="vertical" className="flex flex-col gap-5" form={form} onFinish={onFinish}>
+      <Form
+      layout="vertical"
+      className="flex flex-col gap-5"
+      form={form}
+      onFinish={onFinish}
+      initialValues={category}
+      >
         <Form.Item
           label="Category Name"
           name="name"
@@ -66,4 +85,6 @@ interface CategoryFormProps {
   showCategoryForm: boolean;
   setShowCategoryForm: (show: boolean) => void;
   reloadData: () => void;
+  category: any;
+  setSelectedCategory: (category: any) => void;
 }

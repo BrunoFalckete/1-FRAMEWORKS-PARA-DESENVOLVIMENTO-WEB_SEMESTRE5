@@ -44,6 +44,7 @@ function Register() {
             onFinish={onRegister}
             className="w-[400px] flex flex-col gap-5"
             layout="vertical"
+            initialValues={{name: "", email: "", password: ""}}
           >
             <h1 className="text-2xl font-bold">Register</h1>
             <hr />
