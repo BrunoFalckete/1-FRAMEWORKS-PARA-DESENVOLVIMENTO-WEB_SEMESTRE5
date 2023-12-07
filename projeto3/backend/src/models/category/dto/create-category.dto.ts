@@ -1,5 +1,5 @@
 export class CreateCategoryDto {
-  id: number;
+  id: string;
   name: string;
   description: string;
 }

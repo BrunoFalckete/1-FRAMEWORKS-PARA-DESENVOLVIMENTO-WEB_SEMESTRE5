@@ -4,6 +4,7 @@ import { Tabs, TabsProps } from 'antd';
 import CategoriesList from './components/CategoriesList';
 import router from 'next/router';
 import { useRouter, useSearchParams } from 'next/navigation';
+import ProductsList from './components/ProductsList';
 
 function Profile() {
 
@@ -18,7 +19,7 @@ function Profile() {
     {
       key: '1',
       label: 'Products',
-      children: 'Content of Tab Products',
+      children: <ProductsList />,
     },
     {
       key: '2',

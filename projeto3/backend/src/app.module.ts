@@ -6,10 +6,22 @@ import { UserModule } from './models/user/user.module';
 import { PrismaModule } from './database/prisma.module';
 import { LoginModule } from './auth/login/login.module';
 import { CategoryModule } from './models/category/category.module';
-import { FilesModule } from './models/files/files.module';
+import { ProductModule } from './models/product/product.module';
+import { ImageModule } from './models/image/image.module';
+import { PaymentModule } from './models/payment/payment.module';
+import { OrdersModule } from './models/orders/orders.module';
 
 @Module({
-  imports: [UserModule, PrismaModule, LoginModule, CategoryModule, FilesModule],
+  imports: [
+    UserModule,
+    PrismaModule,
+    LoginModule,
+    CategoryModule,
+    ProductModule,
+    ImageModule,
+    PaymentModule,
+    OrdersModule,
+  ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })

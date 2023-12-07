@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.6",
+    "@stripe/react-stripe-js": "^2.4.0",
+    "@stripe/stripe-js": "^2.2.0",
     "antd": "^5.9.4",
     "axios": "^1.5.1",
     "bcryptjs": "^2.4.3",
+    "encoding": "^0.1.13",
     "firebase": "^10.4.0",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.29.4",

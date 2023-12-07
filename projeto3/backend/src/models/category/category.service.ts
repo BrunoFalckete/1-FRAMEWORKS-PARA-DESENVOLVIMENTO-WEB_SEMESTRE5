@@ -17,18 +17,18 @@ export class CategoryService {
     return this.prisma.category.findMany();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return `This action returns a #${id} category`;
   }
 
-  async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+  async update(id: string, updateCategoryDto: UpdateCategoryDto) {
     return await this.prisma.category.update({
       where: { id },
       data: updateCategoryDto,
     });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     return await this.prisma.category.delete({
       where: { id },
     });
